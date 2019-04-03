@@ -7,15 +7,21 @@ import org.hibernate.cfg.Configuration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
+
 public class HibernateConfiguration {
 
     private static Logger logger = LoggerFactory.getLogger(HibernateConfiguration.class);
 
     public static void main(String[] args) {
         Configuration configuration = new Configuration();
+       // configuration.configure(new File("src\\main\\resources\\hibernate.cfg.xml"));
         configuration.configure("hibernate.cfg.xml");
         try(SessionFactory sessionFactory = configuration.buildSessionFactory();
         Session session = sessionFactory.openSession()) {
+
+
+
 
             Transaction transaction = session.beginTransaction();
             transaction.commit();

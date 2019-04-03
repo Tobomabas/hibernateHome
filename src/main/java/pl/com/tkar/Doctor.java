@@ -2,6 +2,7 @@ package pl.com.tkar;
 
 public class Doctor {
 
+    private int id;
     private String name;
     private String surname;
     private double sallary;
@@ -16,6 +17,8 @@ public class Doctor {
 
     /**Default Constructor**/
     protected Doctor() {}
+
+    public int getId() {return id;}
 
     public String getName() {
         return name;
@@ -36,6 +39,7 @@ public class Doctor {
     @Override
     public String toString() {
         return "Doctor{" +
+                "id ='" + id + '\''+
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", sallary=" + sallary +
